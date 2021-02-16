@@ -27,6 +27,12 @@ public class Driver {
             Numbers.add(i, random);
         }
 
+        ArrayList<Integer> Copy1Numbers = new ArrayList<>(Numbers);
+        ArrayList<Integer> Copy2Numbers = new ArrayList<>(Numbers);
+        ArrayList<Integer> Copy3Numbers = new ArrayList<>(Numbers);
+        ArrayList<Integer> Copy4Numbers = new ArrayList<>(Numbers);
+        ArrayList<Integer> Copy5Numbers = new ArrayList<>(Numbers);
+
         // Create file
         File file = new File("Sorts.txt");
         try {
@@ -44,16 +50,13 @@ public class Driver {
             switch (opc) {
                 case 1:
                     // Gnome sort
-                    v.PrintList(Numbers);
-                    s.GnomeSort(Numbers);
-                    v.PrintList(Numbers);
+                    s.GnomeSort(Copy1Numbers);
+                    
                     break;
             
                 case 2:
                     // Merge sort
-                    v.PrintList(Numbers);
-                    Numbers = s.MergeSort(Numbers);
-                    v.PrintList(Numbers);
+                    Numbers = s.MergeSort(Copy2Numbers);
                     break;
             
                 case 3:
@@ -68,9 +71,7 @@ public class Driver {
             
                 case 5:
                     // Bubble sort
-                    v.PrintList(Numbers);
-                    s.BubbleSort(Numbers);
-                    v.PrintList(Numbers);
+                    s.BubbleSort(Copy5Numbers);
                     break;
             
                 case 6:
