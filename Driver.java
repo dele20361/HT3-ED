@@ -50,13 +50,17 @@ public class Driver {
             switch (opc) {
                 case 1:
                     // Gnome sort
+                    v.PrintList(Copy1Numbers);
                     s.GnomeSort(Copy1Numbers);
+                    v.PrintList(Copy1Numbers);
                     
                     break;
             
                 case 2:
                     // Merge sort
+                    v.PrintList(Copy2Numbers);
                     Numbers = s.MergeSort(Copy2Numbers);
+                    v.PrintList(Copy2Numbers);
                     break;
             
                 case 3:
@@ -75,7 +79,9 @@ public class Driver {
             
                 case 5:
                     // Bubble sort
+                    v.PrintList(Copy5Numbers);
                     s.BubbleSort(Copy5Numbers);
+                    v.PrintList(Copy5Numbers);
                     break;
             
                 case 6:
