@@ -1,3 +1,4 @@
+import java.util.ArrayList;
 import java.util.Scanner;
 
 /**
@@ -66,11 +67,11 @@ public class Vista {
      * @return int Chosen option
      * @author Paola De León
      */
-    public int Menu() {
+    public int Menu ( ) {
         boolean continuar = true;
         int num = 0;
         int opc = 0;
-        while (continuar==true) {
+        while ( continuar == true ) {
             System.out.print("\n\nMENU\n\n"
             + "1) Gnome sort\n"
             + "2) Merge sort\n"
@@ -78,12 +79,12 @@ public class Vista {
             + "4) Radix sort\n"
             + "5) Bubble sort\n"
             + "6) Salir\n"
-            + "Ingrese el numero de opción a escoger: ");
+            + "\nIngrese el numero de opción a escoger: ");
             String numS = scan.nextLine();
-            num = ValideNum(numS);
+            num = ValideNum( numS );
             if (num!=-1) {
                 opc = num;
-                continuar=false;
+                continuar = false;
             }
         }
 
@@ -96,7 +97,7 @@ public class Vista {
      * @author Paola De León
      */
     public void Exit ( ) {
-        System.out.println("Saliendo...");
+        System.out.println("\n\nSaliendo...");
     }
 
 
@@ -105,7 +106,26 @@ public class Vista {
      * @author Paola De León
      */
     public void ErrorFile ( ) {
-        System.out.println("Error al crear archivo...");
+        System.out.println("\nError al crear archivo...");
+    }
+
+
+    /**
+     * Error message
+     * @author Paola De León
+     */
+    public void Error ( ) {
+        System.out.println("\nError intentalo de nuevo...");
+    }
+
+    public void PrintList ( ArrayList<Integer> Numbers ) {
+        System.out.println( "\n\n__________________\n" );
+        System.out.println( "  LISTA ORDENADA \n" );
+        for (int j = 0; j < Numbers.size()-1; j++) {
+            System.out.println( "          " + Numbers.get(j) );
+        }
+        System.out.println( "__________________" );
     }
 
 }
+
