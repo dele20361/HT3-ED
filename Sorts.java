@@ -27,5 +27,22 @@ public class Sorts {
             }
         }
 
-    }    
+    }
+    
+    
+    /**
+     * Method to sort numbers with Bubble Sort.
+     * @param Numbers ArrayList that contains all the numbers.
+     * @author Paola De León
+     */
+    public void BubbleSort ( ArrayList<Integer> Numbers ) {
+        for (int i = 0; i < Numbers.size(); i++) {
+            for (int j = 0; j < Numbers.size(); j++) {
+                if ( Numbers.get(i) < Numbers.get(j) ) {
+                    Collections.swap(Numbers, i, j);
+                }
+            }
+        }
+    }
+    
 }
