@@ -66,7 +66,9 @@ public class Driver {
             
                 case 5:
                     // Bubble sort
-                    
+                    v.PrintList(Numbers);
+                    s.BubbleSort(Numbers);
+                    v.PrintList(Numbers);
                     break;
             
                 case 6:
