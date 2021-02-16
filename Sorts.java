@@ -1,9 +1,6 @@
-<<<<<<< HEAD
 import java.util.ArrayList;
 import java.util.Collections;
 
-=======
->>>>>>> 7655fc28e4e1175f544527dafe45eb979e947c99
 /**
  * Class with sort types as methods
  * @author Ana Paola De León
