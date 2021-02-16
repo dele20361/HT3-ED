@@ -128,3 +128,7 @@ public class Vista {
     }
 
 }
+<<<<<<< HEAD
+=======
+
+>>>>>>> 7655fc28e4e1175f544527dafe45eb979e947c99
