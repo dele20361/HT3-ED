@@ -61,12 +61,16 @@ public class Driver {
             
                 case 3:
                     // Quick sort
-
+                	int[] list = s.arrayListToInt(Numbers);
+                	//int[] newList = s.quickSort(list, 0, list.length);
+                	//Numbers = s.intArrayToArrayList(newList);
                     break;
             
                 case 4:
                     // Radix sort
-
+                	//int[] list = s.arrayListToInt(Numbers);
+                	//int[] newList = s.radixSort(list, 0, list.length);
+                	//Numbers = s.intArrayToArrayList(newList);
                     break;
             
                 case 5:

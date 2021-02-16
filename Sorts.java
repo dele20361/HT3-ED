@@ -1,5 +1,6 @@
 import java.util.ArrayList;
 import java.util.Collections;
+import java.util.List;
 
 /**
  * Class with sort types as methods
@@ -122,6 +123,124 @@ public class Sorts {
 
         return Final;
     }
+    
+    /**
+     * QuickSort sorting method for ordering data
+     * @param array list of numbers to be sorted
+     * @param begin start of the list
+     * @param end end of the list
+     * @author Jeyner Arango
+     * @return 
+     */
+    public void quickSort(int[] array, int begin, int end) {
+    	int location;
+    	if (begin <= end) {
+    		location = partition(array, begin, end);
+    		quickSort(array, begin, location-1); //iterate left of partition
+    		quickSort(array, location +1, end); // iterate right of partition
+    	}
+    }
+    
+    /**
+     * Helper function for quickSort function
+     * @param array partition list of numbers to be sorted
+     * @param begin begin of the array
+     * @param end end of the array
+     * @return arrange partition
+     * @author Jeyner Arango
+     */
+    private int partition(int[] array, int begin, int end) {
+    	int pivot = array[end];
+    	int i = begin - 1; // first element of the partition
+    	
+    	for (int j = begin; j<end; j++){
+    		if (array[j] < pivot) {
+    			i++;
+    			int swapNumber = array[i];
+    			array[i] = array[j];
+    			array[j] = swapNumber;
+    		}
+    	}
+    	int swapNumber = array[i+1];
+    	array[i+1] = array[end];
+    	array[end] = swapNumber;
+    	return i+1;
+    }
+    
+    /**
+     * Helper to convert ArrayList<Integer> to int[]
+     * @param numbers
+     * @return int[] array
+     * @author Jeyner Arango
+     */
+    public int[] arrayListToInt(ArrayList<Integer> numbers) {
+    	int[] array = new int[numbers.size()];
+    	int count = 0;
+    	for(Integer n: numbers) {
+    		array[count++] = n.intValue();
+    	}
+    	return array;
+    }
+    
+    /**
+     * Helper function to convert int[] to ArrayList<Integer>
+     * @param array int[] array
+     * @return arrayIntegerList a ArrayList<Integer> type
+     * @author Jeyner Arango
+     */
+    public ArrayList<Integer> intArrayToArrayList(int[] array){
+    	ArrayList<Integer> arrayIntegerList = new ArrayList<>();
+    	for(int n:array) {
+    		arrayIntegerList.add(Integer.valueOf(n));		
+    	}
+    	return arrayIntegerList;
+    }
+    
+	/**
+     * radixSort Function without the countingSort helper 
+     * @param input
+	 * @param length 
+	 * @param j 
+     */
+    public void radixSort(int[] input, int j, int length) { 
+    	final int RADIX = 10; 
+    	
+    	// declare and initialize bucket[] 
+    	List<Integer>[] digitBox = new ArrayList[RADIX]; 
+    	for (int i = 0; i < digitBox.length; i++) { 
+    		digitBox[i] = new ArrayList<Integer>(); 
+    	} 
+    	
+    	// sort 
+    	boolean maxLength = false; 
+    	int tmp = -1; 
+    	int placement = 1; 
+   
+    	while (!maxLength) { 
+    		maxLength = true; 
+    	
+    		// split input between lists 
+    		for (Integer i : input) {
+    			tmp = i / placement; 
+    			digitBox[tmp % RADIX].add(i); 
+    			if (maxLength && tmp > 0) {
+    		maxLength = false; 
+    			} 
+    		} 
+    	
+	    	// empty lists into input array 
+	    	int a = 0; 
+	    	for (int b = 0; b < RADIX; b++) { 
+	    		for (Integer i : digitBox[b]) {
+    			input[a++] = i;
+	    		} 
+	    		digitBox[b].clear(); 
+	    	} 
+    	
+	    	// move to next digit
+	    	placement *= RADIX; 
+	    } 
+    } 
 
     
 }
