@@ -51,7 +51,9 @@ public class Driver {
             
                 case 2:
                     // Merge sort
-
+                    v.PrintList(Numbers);
+                    Numbers = s.MergeSort(Numbers);
+                    v.PrintList(Numbers);
                     break;
             
                 case 3:
